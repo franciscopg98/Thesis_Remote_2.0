@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+{% extends "basic_app/base.html"%}
+{%block body_block%}
+<h1>Here are the platforms:</h1>
+
+{% if platforms %}
+
+    {% for plat in platforms %}
+          
+            
+            <a  href="{% url 'basic_app:show_platform' plat.slug %}">{{plat.name}}</a></li>
+            <h2></h2>
+          
+    {% endfor %}
+  
+{% else %}
+<p>NO Platforms DATA FOUND</p>
+{% endif %}
+{% endblock %}

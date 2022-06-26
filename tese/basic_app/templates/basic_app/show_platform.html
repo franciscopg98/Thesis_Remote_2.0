@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+{% extends "basic_app/base.html"%}
+{%block body_block%}
+
+{% if platform %}
+
+        <h2>{{platform.name}}</h2>
+        <h2>{{platform.slug}}</h2>
+        <h2>{{platform.description}}</h2>
+        <h2></h2>
+        <a  href="{% url 'basic_app:list_products' platform.slug %}">List of products for {{platform.name}}</a></li>
+        
+  
+{% else %}
+<p>NO Platforms DATA FOUND</p>
+{% endif %}
+
+{% endblock %}

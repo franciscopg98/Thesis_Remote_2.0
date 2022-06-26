@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+{% extends "basic_app/base.html"%}
+{% load django_tables2 %}
+{%block body_block%}
+<h1>Here are the products:</h1>
+
+{% if products %}
+
+    {% for p in products %}
+
+            <a  href="{% url 'basic_app:show_product' p.platform p.slug %}">{{p.name}}</a></li>
+            <h2></h2>
+           
+          
+    {% endfor %}
+  
+{% else %}
+<p>NO Products DATA FOUND</p>
+{% endif %}
+{% render_table table %}XXXXX
+{% endblock %}
+
+
+
+
